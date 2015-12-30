@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="patientApp">
+
+<head>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  
+
+  <!-- Main Module -->
+  <script src="js/myApp.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/controllers.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles_v1.css">
+
+
+  
+  
+</head>
+
+<body>
+
+  <div  ng-controller="patientDataCtrl"> 
+
+  Search: <input ng-model="query">
+  <p> Click <a href="" ng-click=loadPatientData() > here </a> to fetch data </p>
+
+  <table>
+      <tr>
+          <th>Name</th>
+          <th>DOB</th>
+        
+      </tr>
+      <tr ng-repeat="patient in patients|filter:query">
+          <td>{{patient.name}}</td>
+          <td>{{patient.dob}}</td>
+      </tr>
+  </table>
+
+  <span> <a href="http:\\json-generator.com"> json-generator </a>  is visited {{visitCount}}  times </span> 
+
+  </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
